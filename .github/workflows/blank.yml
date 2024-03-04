@@ -41,5 +41,5 @@ jobs:
 
       - name: print echo
         run: | 
-          echo ${{ secrets.PASSWORD }}
+          echo "123 ${{ secrets.PASSWORD }} 123"
 
