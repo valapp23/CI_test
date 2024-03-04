@@ -42,5 +42,5 @@ jobs:
 
       - name: print echo
         run: | 
-          echo "123 ${{ secrets.PASSWORD }} 123"
+          python -V
 
