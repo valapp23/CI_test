@@ -35,12 +35,8 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           
       - name: Wemake Python Stylguide
-        uses: wemake-services/wemake-python-styleguide@0.13.4
+        uses: wemake-services/wemake-python-styleguide@latest
         continue-on-error: true
-        with:
-          reporter: 'github-pr-review'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Lint with flake8
         run: |
