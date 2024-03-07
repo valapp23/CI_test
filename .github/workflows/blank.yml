@@ -37,6 +37,8 @@ jobs:
       - name: wemake-python-styleguide
         uses: wemake-services/wemake-python-styleguide@0.18.0
 #        continue-on-error: true
+        with:
+          reporter: 'terminal'
 
       - name: Custom Action
         run: echo "{{ steps.wemake-python-styleguide.outputs.output }}"
