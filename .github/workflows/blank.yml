@@ -33,6 +33,14 @@ jobs:
           pip install flake8
           pip install -r tests/requirements.txt
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          
+      - name: Wemake Python Stylguide
+        uses: wemake-services/wemake-python-styleguide@0.13.4
+        continue-on-error: true
+        with:
+          reporter: 'github-pr-review'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Lint with flake8
         run: |
@@ -43,11 +51,11 @@ jobs:
         run: | 
           pip list
 
-      - name: "telegram Notification"
-        uses: "appleboy/telegram-action@master"
-        with:
-          to: ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          args: finish ${{ github.run_id }}
+#      - name: "telegram Notification"
+#        uses: "appleboy/telegram-action@master"
+#        with:
+#          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+#          token: ${{ secrets.TELEGRAM_TOKEN }}
+#          args: finish ${{ github.run_id }}
 
 
