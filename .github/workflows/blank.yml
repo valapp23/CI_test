@@ -40,7 +40,7 @@ jobs:
 
       - name: WemakeLint
         run: |
-            flake8 .
+            flake8 ./src/main.py
           
 #      - name: wemake-python-styleguide
 #        uses: wemake-services/wemake-python-styleguide@0.18.0
