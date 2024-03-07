@@ -39,7 +39,7 @@ jobs:
 #        continue-on-error: true
 
       - name: Custom Action
-        runs: echo "{{ steps.wemake-python-styleguide.outputs.output }}"
+        run: echo "{{ steps.wemake-python-styleguide.outputs.output }}"
 
 #      - name: Lint with flake8
 #        run: |
