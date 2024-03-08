@@ -52,12 +52,6 @@ jobs:
 #        with:
 #          reporter: 'terminal'
 
-#      - name: Custom Action
-#        run: echo "{{ steps.wemake-python-styleguide.outputs.output }}"
-
-#      - name: Lint with flake8
-#        run: |
-#          flake8 .
 
 
       - name: print echo
