@@ -47,7 +47,7 @@ jobs:
       - name: Upload test summary
         uses: actions/upload-artifact@v3
         with:
-          name: test-summary
+          name: html-report
           path: ./flake-report/
         if: always()
 
