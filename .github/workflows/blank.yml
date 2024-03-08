@@ -44,11 +44,13 @@ jobs:
             pip install flake8-html
             flake8 ./src/main.py --format=html --htmldir=flake-report --exit-zero
 
-      - name: run_main
-        run: |
-          python ./src/main.py
-        output: test-summary.md
-          
+      - name: Upload test summary
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-summary
+          path: ./flake-report/src.main.report.html
+        if: always()
+
 #      - name: wemake-python-styleguide
 #        uses: wemake-services/wemake-python-styleguide@0.18.0
 ##        continue-on-error: true
