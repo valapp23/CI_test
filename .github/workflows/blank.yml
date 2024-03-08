@@ -47,6 +47,7 @@ jobs:
       - name: run_main
         run: |
           python ./src/main.py
+        output: test-summary.md
           
 #      - name: wemake-python-styleguide
 #        uses: wemake-services/wemake-python-styleguide@0.18.0
@@ -56,9 +57,12 @@ jobs:
 
 
 
-      - name: print echo
-        run: | 
-          ls ./flake-report/
+      - name: Upload test summary
+        uses: actions/upload-artifact@v3
+        with:
+       name: test-summary
+          path: test-summary.md
+        if: always()
 #
 #      - name: "telegram Notification"
 #        uses: "appleboy/telegram-action@master"
