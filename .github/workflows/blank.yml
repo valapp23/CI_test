@@ -58,7 +58,7 @@ jobs:
 
       - name: print echo
         run: | 
-          ls
+          ls ./flake-report/
 #
 #      - name: "telegram Notification"
 #        uses: "appleboy/telegram-action@master"
