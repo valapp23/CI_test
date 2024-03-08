@@ -48,7 +48,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-summary
-          path: ./flake-report/src.main.report.html
+          path: ./flake-report/
         if: always()
 
 #      - name: wemake-python-styleguide
