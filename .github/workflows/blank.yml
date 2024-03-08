@@ -58,7 +58,7 @@ jobs:
 
       - name: print echo
         run: | 
-          ls flake-reports
+          ls
 #
 #      - name: "telegram Notification"
 #        uses: "appleboy/telegram-action@master"
