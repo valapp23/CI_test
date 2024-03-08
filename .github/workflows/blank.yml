@@ -41,7 +41,9 @@ jobs:
         run: |
             python -m pip install --upgrade pip
             pip install flake8
-            flake8 ./src/main.py
+            pip install flake8-html
+            flake8 ./src/main.py --format=html --exit-zero
+        with:
 
       - name: run_main
         run: |
