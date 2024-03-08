@@ -42,7 +42,7 @@ jobs:
             python -m pip install --upgrade pip
             pip install wemake-python-styleguide
             pip install flake8-html
-            flake8 ./src/main.py --format=html --htmldir=flake-report --exit-zero
+            flake8 ./src/main.py --format=html --htmldir=flake-report
 
       - name: Upload test summary
         uses: actions/upload-artifact@v3
@@ -50,6 +50,23 @@ jobs:
           name: test-summary
           path: ./flake-report/
         if: always()
+
+      - name: telegram Notification
+        if: ${{ failure() }}
+        uses: "appleboy/telegram-action@master"
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          messages: сборка завершилась с ошибкой
+
+
+      - name: "telegram Notification"
+        uses: "appleboy/telegram-action@master"
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          args: сборка прошла успешно
+
 
 #      - name: wemake-python-styleguide
 #        uses: wemake-services/wemake-python-styleguide@0.18.0
