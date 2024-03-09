@@ -57,7 +57,7 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          messages: сборка завершилась с ошибкой
+          args: ${{ github.event.head_commit.message }}. Сборка не прошла проверку на линтер.
 
 
       - name: "telegram Notification"
