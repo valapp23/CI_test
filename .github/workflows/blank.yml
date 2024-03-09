@@ -57,7 +57,7 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          args: ${{ github.event.head_commit.message }}. Сборка не прошла проверку на линтер.
+          args: rep. ${{ github.ref_name }}. commit ${{ github.event.head_commit.message }}. Сборка не прошла проверку на линтер.
 
 
       - name: "telegram Notification"
@@ -65,7 +65,7 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          args: сборка прошла успешно. (python ${{ matrix.python-version }})
+          args: rep ${{ github.ref_name }}. Cборка прошла успешно. (python ${{ matrix.python-version }})
 
 
 #      - name: wemake-python-styleguide
