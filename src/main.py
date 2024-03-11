@@ -1,3 +1,5 @@
 if __name__ == '__main__':
     value = 7
-    print(value)
+    intd: str = 4
+    print(intd + 5)
+    print(value + '123')
