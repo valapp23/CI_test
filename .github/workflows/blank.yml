@@ -55,6 +55,7 @@ jobs:
             pip install mypy
             pip install mypy[reports]
             flake8 ./src/main.py --html-report=mypy-report
+        if: always()
 
       - name: Upload report mypy
         uses: actions/upload-artifact@v3
